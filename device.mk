@@ -16,5 +16,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+# MiuiCamera
+PRODUCT_PACKAGES += \
+    MiuiCameraOverlayIcon
+
 # Inherit from the proprietary version
 $(call inherit-product, vendor/xiaomi/duchamp-miuicamera/duchamp-miuicamera-vendor.mk)
