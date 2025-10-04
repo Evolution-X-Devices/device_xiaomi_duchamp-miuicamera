@@ -1,7 +1,7 @@
-From 951719c012c0a3375f794993a1c5dee235e42007 Mon Sep 17 00:00:00 2001
+From 3a32b73d1624150f223adfaf8aaa007d1d0f41a9 Mon Sep 17 00:00:00 2001
 From: Arian <arian.kulmer@web.de>
 Date: Thu, 27 Mar 2025 05:13:34 +0000
-Subject: [PATCH 2/5] Support third party galleries
+Subject: [PATCH] Support third party galleries
 
 Signed-off-by: Saikrishna1504 <saikrishna26918@gmail.com>
 ---
@@ -10,7 +10,7 @@ Signed-off-by: Saikrishna1504 <saikrishna26918@gmail.com>
  2 files changed, 2 insertions(+), 27 deletions(-)
 
 diff --git a/smali/com/android/camera/w3.smali b/smali/com/android/camera/w3.smali
-index b35f8bc..6030efc 100644
+index b35f8bcd1..6030efc4e 100644
 --- a/smali/com/android/camera/w3.smali
 +++ b/smali/com/android/camera/w3.smali
 @@ -1092,9 +1092,9 @@
@@ -36,7 +36,7 @@ index b35f8bc..6030efc 100644
      const-string p1, "from_MiuiCamera"
  
 diff --git a/smali_classes4/com/xiaomi/camera/parallelservice/provider/ParallelProcessProvider.smali b/smali_classes4/com/xiaomi/camera/parallelservice/provider/ParallelProcessProvider.smali
-index 9682910..aa44f79 100644
+index 96829106e..aa44f7998 100644
 --- a/smali_classes4/com/xiaomi/camera/parallelservice/provider/ParallelProcessProvider.smali
 +++ b/smali_classes4/com/xiaomi/camera/parallelservice/provider/ParallelProcessProvider.smali
 @@ -414,28 +414,6 @@
@@ -68,6 +68,3 @@ index 9682910..aa44f79 100644
      :cond_0
      :goto_0
      return v1
--- 
-2.43.0
-
