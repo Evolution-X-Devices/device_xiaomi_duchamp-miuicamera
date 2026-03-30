@@ -22,3 +22,7 @@ $(call inherit-product, vendor/xiaomi/duchamp-miuicamera/duchamp-miuicamera-vend
 # MiuiCamera Icon
 PRODUCT_PACKAGES += \
     MiuiCameraOverlayIcon
+
+# Miui Gallery
+PRODUCT_PACKAGES += \
+    MiuiGallery
