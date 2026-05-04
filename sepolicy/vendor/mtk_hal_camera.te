@@ -1,0 +1,7 @@
+# Allow mtk_hal_camera to read vendor camera properties
+get_prop(mtk_hal_camera, vendor_mtk_camera_prop)
+get_prop(mtk_hal_camera, vendor_default_prop)
+get_prop(mtk_hal_camera, vendor_camera_sensor_prop)
+
+binder_call(mtk_hal_camera, platform_app)
+allow mtk_hal_camera platform_app:fd use;
