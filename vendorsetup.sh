@@ -40,3 +40,20 @@ if [ -f "$FILE" ]; then
 else
     echo "Warning: SessionConfigurationUtils.cpp not found!"
 fi
+
+echo "Applying MTK Face Unlock Patch for CallbackProcessor..."
+
+CB_FILE="frameworks/av/services/camera/libcameraservice/api1/client2/CallbackProcessor.cpp"
+CB_SEARCH="if (imgBuffer.format != expectedFormat) {"
+CB_REPLACE="if (imgBuffer.format != expectedFormat \&\& imgBuffer.format != 0x11) { \/\/ MTK_FACE_UNLOCK_PATCH"
+
+if [ -f "$CB_FILE" ]; then
+    if grep -q "MTK_FACE_UNLOCK_PATCH" "$CB_FILE"; then
+        echo "CallbackProcessor.cpp already patched."
+    else
+        sed -i "s/$CB_SEARCH/$CB_REPLACE/g" "$CB_FILE"
+        echo "Patched CallbackProcessor.cpp for Face Unlock!"
+    fi
+else
+    echo "Warning: CallbackProcessor.cpp not found!"
+fi
