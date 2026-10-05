@@ -1,0 +1,26 @@
+From d9596be690a688a92397d4f820f08a850c813ec7 Mon Sep 17 00:00:00 2001
+From: Arian <arian.kulmer@web.de>
+Date: Wed, 30 Sep 2026 05:33:16 +0000
+Subject: [PATCH] Change com.android.camera.action.REVIEW to
+ android.provider.action.REVIEW
+
+This is the standard intent for review actions
+
+Signed-off-by: Adarsh0127-Elite <adarshmoharana027@gmail.com>
+---
+ smali/A/c3.smali | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/smali/A/c3.smali b/smali/A/c3.smali
+index 6c3485f0..cac5da90 100644
+--- a/smali/A/c3.smali
++++ b/smali/A/c3.smali
+@@ -85,7 +85,7 @@
+ 
+     const/4 v4, 0x0
+ 
+-    const-string v5, "com.android.camera.action.REVIEW"
++    const-string v5, "android.provider.action.REVIEW"
+ 
+     if-eqz v1, :cond_0
+ 

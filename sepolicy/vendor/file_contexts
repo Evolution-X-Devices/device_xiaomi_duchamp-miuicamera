@@ -1,0 +1,2 @@
+# Camera
+/data/vendor/camera(/.*)?                                                                              u:object_r:vendor_camera_data_file:s0

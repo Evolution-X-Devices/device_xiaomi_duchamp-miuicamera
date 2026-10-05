@@ -1,3 +1,6 @@
+# MIUI Camera
+typeattribute platform_app hal_graphics_allocator_client;
+typeattribute platform_app vendor_hal_citsensorservice_xiaomi_client;
 
 binder_use(platform_app)
 binder_call(platform_app, mtk_hal_camera)
@@ -17,3 +20,26 @@ get_prop(platform_app, vendor_mtk_camera_prop)
 get_prop(platform_app, vendor_camera_sensor_prop)
 get_prop(platform_app, vendor_display_type_prop)
 get_prop(platform_app, vendor_us_proximity_prop)
+
+typeattribute platform_app_36 hal_graphics_allocator_client;
+typeattribute platform_app_36 vendor_hal_citsensorservice_xiaomi_client;
+allow platform_app mtk_hal_bgs_hwservice:hwservice_manager find;
+
+binder_use(platform_app_36)
+binder_call(platform_app_36, mtk_hal_camera)
+
+allow platform_app_36 vendor_camera_data_file:dir { append map r_dir_perms write };
+allow platform_app_36 vendor_camera_data_file:file { getattr open read };
+
+allow platform_app_36 app_data_file:file execute;
+
+# MIUI Camera
+typeattribute platform_app_36 hal_camera_client;
+typeattribute platform_app_36 hal_graphics_allocator_client;
+typeattribute platform_app_36 vendor_hal_citsensorservice_xiaomi_client;
+
+# Allow platform_app_36 to read vendor camera properties
+get_prop(platform_app_36, vendor_mtk_camera_prop)
+get_prop(platform_app_36, vendor_camera_sensor_prop)
+get_prop(platform_app_36, vendor_display_type_prop)
+get_prop(platform_app_36, vendor_us_proximity_prop)

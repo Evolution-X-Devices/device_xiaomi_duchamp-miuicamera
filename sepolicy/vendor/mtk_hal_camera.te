@@ -4,4 +4,11 @@ get_prop(mtk_hal_camera, vendor_default_prop)
 get_prop(mtk_hal_camera, vendor_camera_sensor_prop)
 
 binder_call(mtk_hal_camera, platform_app)
+binder_call(mtk_hal_camera, platform_app_36)
 allow mtk_hal_camera platform_app:fd use;
+allow mtk_hal_camera platform_app_36:fd use;
+get_prop(mtk_hal_camera, vendor_thermal_prop)
+dontaudit mtk_hal_camera default_prop:file read;
+
+allow mtk_hal_camera vendor_camera_data_file:dir rw_dir_perms;
+allow mtk_hal_camera vendor_camera_data_file:file create_file_perms;

@@ -1,0 +1,2 @@
+# CitSensor
+type vendor_hal_citsensorservice_xiaomi_service, protected_service, service_manager_type, hal_service_type;
