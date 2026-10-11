@@ -8,7 +8,16 @@ binder_call(mtk_hal_camera, platform_app_36)
 allow mtk_hal_camera platform_app:fd use;
 allow mtk_hal_camera platform_app_36:fd use;
 get_prop(mtk_hal_camera, vendor_thermal_prop)
+get_prop(mtk_hal_camera, zygote_config_prop)
+
 dontaudit mtk_hal_camera default_prop:file read;
 
 allow mtk_hal_camera vendor_camera_data_file:dir rw_dir_perms;
 allow mtk_hal_camera vendor_camera_data_file:file create_file_perms;
+allow mtk_hal_camera hal_misys_vendor_service:service_manager add;
+
+allow mtk_hal_camera graphics_config_prop:file { read open getattr map };
+allow mtk_hal_camera graphics_config_writable_prop:file { read open getattr map };
+
+allow mtk_hal_camera system_data_file:dir search;
+allow mtk_hal_camera system_data_file:dir getattr;

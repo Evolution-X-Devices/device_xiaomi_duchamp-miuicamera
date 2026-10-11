@@ -1,2 +1,4 @@
 # Camera
 /data/vendor/camera(/.*)?                                                                              u:object_r:vendor_camera_data_file:s0
+
+/vendor/bin/hw/vendor\.xiaomi\.hardware\.misys-service                                                 u:object_r:hal_misys_vendor_exec:s0
