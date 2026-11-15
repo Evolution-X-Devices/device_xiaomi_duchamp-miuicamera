@@ -5,7 +5,7 @@
 #
 
 MIUICAMERA_PATH := device/xiaomi/duchamp-miuicamera
-#SELINUX_IGNORE_NEVERALLOWS := true
+SELINUX_IGNORE_NEVERALLOWS := true
 
 # Properties
 TARGET_SYSTEM_EXT_PROP += $(MIUICAMERA_PATH)/system_ext.prop
